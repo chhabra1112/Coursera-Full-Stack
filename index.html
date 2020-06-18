@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <title>Ristorante Con Fusion</title>
@@ -35,7 +35,7 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a href="" data-toggle="modal" data-target="#modallogin">
+                    <a href="" id="login-btn">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -94,8 +94,8 @@
                     <img src="img/logo.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#reserveform"
-                        role="button"> Reserve Table</a>
+                    <a class="btn btn-warning btn-lg btn-block"
+                        role="button" id="reserve-btn"> Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -216,6 +216,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <div id="reserveform" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="content">
                 <div class="modal-content">
@@ -295,7 +296,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
         <footer class="footer">
             <div class="container">
@@ -362,6 +362,14 @@
                         $('#carouselbutton').children('span').addClass('fa-pause');
                         $('#carouselbutton').children('span').removeClass('fa-play');
                     }
+                });
+                $('#login-btn').click((e)=>{
+                    e.preventDefault();
+                    $('#modallogin').modal('toggle');
+                });
+                $('#reserve-btn').click((e)=>{
+                    e.preventDefault();
+                    $('#reserveform').modal('toggle');
                 });
             });
         </script>
